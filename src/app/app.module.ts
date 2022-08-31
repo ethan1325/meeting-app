@@ -8,6 +8,9 @@ import { InputComponent } from './components/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
 import { MeetingComponent } from './components/meeting/meeting.component';
 import { MeetingItemComponent } from './components/meeting-item/meeting-item.component';
+import { AddMeetingComponent } from './components/add-meeting/add-meeting.component';
+import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,13 @@ import { MeetingItemComponent } from './components/meeting-item/meeting-item.com
     ButtonComponent,
     MeetingComponent,
     MeetingItemComponent,
+    AddMeetingComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

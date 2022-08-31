@@ -1,13 +1,2 @@
-<app-header class="text-center"></app-header>
-<div class="bg-white border d-flex p-3 rounded flex-column gap-2 m-2">
-  <div class="d-flex gap-2 w-100 justify-content-between">
-    <app-input text="Jam" type="time"></app-input>
-    <app-input text="s/d" type="time"></app-input>
-  </div>
-  <app-input text="Tanggal" type="date"></app-input>
-  <app-input text="Judul" type="text"></app-input>
-  <app-input text="Deskripsi" type="text"></app-input>
-  <app-button class="align-self-center" text="Tambah" (btnClick)="addTask()"></app-button>
-</div>
-<h2 class="text-center">Semua Meeting</h2>
-<app-meeting></app-meeting>
+<app-navbar></app-navbar>
+<router-outlet>

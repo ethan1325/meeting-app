@@ -1,6 +1,7 @@
-export interface Meeting {
-    time: string;
-    date: string;
-    title: string;
-    description: string;
+export class Meeting {
+    jam?: string;
+    sampai?: string;
+    tanggal?: string;
+    judul?: string;
+    deskripsi?: string;
 }
