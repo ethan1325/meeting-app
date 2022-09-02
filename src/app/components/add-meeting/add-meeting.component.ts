@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Meeting } from 'src/app/Meeting';
+import { MeetingService } from 'src/app/services/meeting.service';
 
 @Component({
   selector: 'app-add-meeting',
@@ -12,10 +13,16 @@ export class AddMeetingComponent implements OnInit {
   tanggal!: string;
   judul!: string;
   deskripsi!: string;
+  newMeetings!: Meeting[];
 
-  constructor() { }
+  constructor(private meetingService: MeetingService) { }
 
   ngOnInit(): void {
+    this.meetingService.getMeetings().subscribe(
+      (meetings) => {
+      this.newMeetings = meetings;
+      }
+    );
   }
   onSubmit() {
     if (!this.jam) {
@@ -41,13 +48,17 @@ export class AddMeetingComponent implements OnInit {
       alert('Mohon isi kolom deskripsi!');
       return;
     }
-    const newMeeting = {
-      jam: '1 PM',
-      sampai: '2 PM',
-      tanggal: '1 September',
-      judul: 'First Meeting',
-      deskripsi: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quaerat similique aliquid, suscipit cumque velit! Repellat quam dignissimos veritatis sit, natus consequatur dicta hic doloremque laudantium odit saepe doloribus ab!',
-    }
+    const newMeeting: Meeting = {
+      jam: this.jam,
+      sampai: this.sampai,
+      tanggal: this.tanggal,
+      judul: this.judul,
+      deskripsi: this.deskripsi,
+    }  
+    
+    this.newMeetings.push(newMeeting);
+    this.meetingService.setMeetings(this.newMeetings);
+    alert('Meeting berhasil ditambahkan!')
     return;
   }
 }

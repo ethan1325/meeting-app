@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Meeting } from './Meeting';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Test';
+  private meetings: Meeting[] = [];
+  get data(): Meeting[] {
+    return this.meetings;
+  }
+
+  set data(meetings: Meeting[]) {
+    this.meetings = meetings;
+  }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';  
+import { MeetingService } from 'src/app/services/meeting.service';
 import { Meeting } from 'src/app/Meeting';
 import { MEETINGS } from 'src/app/mock-meetings';
 
@@ -8,11 +9,12 @@ import { MEETINGS } from 'src/app/mock-meetings';
   styleUrls: ['./meeting.component.css']
 })
 export class MeetingComponent implements OnInit {
-  meetings: Meeting[] = MEETINGS;
+  meetings: Meeting[] = [];
 
-  constructor() { }
+  constructor(private meetingService: MeetingService) { }
 
   ngOnInit(): void {
+    this.meetingService.getMeetings().subscribe((meetings) => this.meetings = meetings);
   }
 
 }
