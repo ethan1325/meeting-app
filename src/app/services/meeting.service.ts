@@ -12,9 +12,9 @@ export class MeetingService {
 
   }
 
-  setMeetings(meeting: Meeting[]){
-    console.log(meeting);
-  }
+  // setMeetings(meeting: Meeting[]){
+  //   console.log(meeting);
+  // }
 
   getMeetings(): Observable<Meeting[]> {
     return this.meetings;

@@ -20,7 +20,7 @@ export class AddMeetingComponent implements OnInit {
   ngOnInit(): void {
     this.meetingService.getMeetings().subscribe(
       (meetings) => {
-      this.newMeetings = meetings;
+        this.newMeetings = meetings;
       }
     );
   }
@@ -57,7 +57,7 @@ export class AddMeetingComponent implements OnInit {
     }  
     
     this.newMeetings.push(newMeeting);
-    this.meetingService.setMeetings(this.newMeetings);
+    // this.meetingService.setMeetings(this.newMeetings);
     alert('Meeting berhasil ditambahkan!')
     return;
   }
