@@ -1,5 +1,8 @@
-<app-header title="Semua Meeting"></app-header>
-<div class="d-flex flex-column  w-100">
-    <app-meeting-item  class="row border rounded p-2 m-2 bg-white" *ngFor="let meeting of meetings" [meeting]="meeting">
+<app-header title="Semua Meeting" *ngIf="meetings.length !== 0; else elseBlock"></app-header>
+<ng-template #elseBlock>
+    <app-header title="Belum ada meeting!"></app-header>
+</ng-template>
+<div class="d-flex flex-column w-100">
+    <app-meeting-item class="row border rounded p-2 m-2 bg-white" *ngFor="let meeting of meetings; let i = index" [meeting]="meeting" [number]=i (btnClick)="onDelete(i)">
     </app-meeting-item>
 </div>

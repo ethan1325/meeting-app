@@ -17,4 +17,8 @@ export class MeetingComponent implements OnInit {
     this.meetingService.getMeetings().subscribe((meetings) => this.meetings = meetings);
   }
 
+  public onDelete(i: number){
+    this.meetings.splice(i, 1);
+  }
+
 }

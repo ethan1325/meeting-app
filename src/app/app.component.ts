@@ -7,12 +7,12 @@ import { Meeting } from './Meeting';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private meetings: Meeting[] = [];
-  get data(): Meeting[] {
-    return this.meetings;
-  }
+  // private meetings: Meeting[] = [];
+  // get data(): Meeting[] {
+  //   return this.meetings;
+  // }
 
-  set data(meetings: Meeting[]) {
-    this.meetings = meetings;
-  }
+  // set data(meetings: Meeting[]) {
+  //   this.meetings = meetings;
+  // }
 }

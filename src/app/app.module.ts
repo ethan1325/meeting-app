@@ -11,6 +11,7 @@ import { MeetingItemComponent } from './components/meeting-item/meeting-item.com
 import { AddMeetingComponent } from './components/add-meeting/add-meeting.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UpdateMeetingComponent } from './components/update-meeting/update-meeting.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MeetingItemComponent,
     AddMeetingComponent,
     NavbarComponent,
+    UpdateMeetingComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,26 @@
+<app-header title="Update {{currentMeeting.judul}}"></app-header>
+<form class="bg-white border d-flex p-3 rounded flex-column gap-2 m-2 border shadow" (ngSubmit)="onSubmit()">
+    <div class="d-flex gap-2 w-100 justify-content-between">
+        <div class="d-flex w-100 justify-content-between gap-2">
+            <label for="jam" class="d-flex align-items-center">Jam</label>
+            <input type="time" class="form-control w-75" name="jam" placeholder="" [(ngModel)]="jam" value="{{jam}}">
+        </div>
+        <div class="d-flex w-100 justify-content-between gap-2">
+            <label for="sampai" class="d-flex align-items-center">s/d</label>
+            <input type="time" class="form-control w-75" name="sampai" placeholder="" [(ngModel)]="sampai">
+        </div>
+    </div>
+    <div class="d-flex w-100 justify-content-between gap-2">
+        <label for="tanggal" class="d-flex align-items-center">Tanggal</label>
+        <input type="date" class="form-control w-75" name="tanggal" placeholder="" [(ngModel)]="tanggal">
+    </div>
+    <div class="d-flex w-100 justify-content-between gap-2">
+        <label for="judul" class="d-flex align-items-center">Judul</label>
+        <input type="" class="form-control w-75" name="judul" placeholder="Judul" [(ngModel)]="judul">
+    </div>
+    <div class="d-flex w-100 justify-content-between gap-2">
+        <label for="deskripsi" class="d-flex align-items-center">Deskripsi</label>
+        <textarea name="deskripsi" class="w-75 form-control" placeholder="Deskripsi" [(ngModel)]="deskripsi"></textarea>
+    </div>
+    <input type="submit" class="btn btn-dark align-self-center" value="Update Meeting!">
+</form>
